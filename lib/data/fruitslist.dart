@@ -1,1 +1,0 @@
-List<String> fruitList=['Apple','Orange','Grape','Mango','Stawberry','Banana','Guvava'];
