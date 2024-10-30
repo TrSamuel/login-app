@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loginapp/constants/colorconst.dart';
-import 'package:loginapp/function/login.dart';
 import 'package:loginapp/widgets/login/inpdec.dart';
+import 'package:loginapp/widgets/login/login_btn.dart';
 
 class Loginscreen extends StatelessWidget {
   final usernameController = TextEditingController();
@@ -12,9 +12,12 @@ class Loginscreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Login page"),
+        titleTextStyle: const TextStyle(
+            color: primaryColor, fontWeight: FontWeight.bold, fontSize: 28),
+        title: const Text("My App"),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 45),
@@ -22,65 +25,30 @@ class Loginscreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextField(
+              style: const TextStyle(
+                fontFamily: 'second-super-font',
+                fontSize: 24,
+              ),
               controller: usernameController,
               decoration: inptFieldDecor(fieldTxt: 'Username'),
+            ),
+            SizedBox(
+              height: size * 0.03,
             ),
             TextField(
               obscureText: true,
               controller: passwordController,
               decoration: inptFieldDecor(fieldTxt: 'Password'),
             ),
-            const SizedBox(
-              height: 45,
+            SizedBox(
+              height: size * 0.04,
             ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                fixedSize: Size(MediaQuery.of(context).size.width, 50),
-                textStyle: const TextStyle(fontSize: 24),
-                backgroundColor: primaryColor,
-                foregroundColor: secondaryColor,
-              ),
-              onPressed: () {
-                final result = login(
-                  username: usernameController.text,
-                  password: passwordController.text,
-                );
-                if (result == true) {
-                  showSnackBar(
-                    context: context,
-                    text: 'Login success',
-                    bgColor: const Color.fromARGB(255, 19, 90, 149),
-                  );
-                  Navigator.pushReplacementNamed(context, "home-screen");
-                } else {
-                  showSnackBar(
-                    context: context,
-                    text: 'Incorrect username or password',
-                    bgColor: const Color.fromARGB(255, 149, 19, 19),
-                  );
-                }
-              },
-              child: const Text("Login"),
-            ),
+            LoginBtn(
+                usernameController: usernameController,
+                passwordController: passwordController),
           ],
         ),
       ),
     );
   }
-}
-
-showSnackBar(
-    {required BuildContext context,
-    required String text,
-    required Color bgColor}) {
-  ScaffoldMessenger.of(context).showSnackBar(
-    SnackBar(
-      duration: const Duration(seconds: 2),
-      content: Text(
-        text,
-        style: const TextStyle(fontSize: 16),
-      ),
-      backgroundColor: bgColor,
-    ),
-  );
 }
