@@ -35,6 +35,11 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  flutter_launcher_icons: ^0.14.1
+flutter_icons:
+  android: true
+  ios: true
+  image_path: lib/assets/logo/logo.jpg
 
 dev_dependencies:
   flutter_test:
@@ -83,6 +88,10 @@ flutter:
     - family: second-super-font
       fonts:
         - asset: lib/assets/fonts/MavenPro-VariableFont_wght.ttf
+        
+    - family: app-title-font
+      fonts:
+        - asset: lib/assets/fonts/Aclonica-Regular.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #

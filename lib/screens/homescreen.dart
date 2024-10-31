@@ -15,6 +15,7 @@ class Homescreen extends StatelessWidget {
           backgroundColor: primaryColor,
           foregroundColor: secondaryColor,
           titleTextStyle: const TextStyle(
+            fontFamily: 'app-title-font',
             fontSize: 28,
             fontWeight: FontWeight.bold,
             color: secondaryColor,

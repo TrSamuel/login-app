@@ -16,7 +16,11 @@ class Loginscreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         titleTextStyle: const TextStyle(
-            color: primaryColor, fontWeight: FontWeight.bold, fontSize: 28),
+          color: primaryColor,
+          fontWeight: FontWeight.bold,
+          fontSize: 28,
+          fontFamily: 'app-title-font',
+        ),
         title: const Text("My App"),
       ),
       body: Padding(
