@@ -12,7 +12,7 @@ class FruitList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
+    return ListView.builder(
       itemCount: fruitList.length,
       itemBuilder: (context, index) {
         final alt = index % 2 == 0 ? true : false;
@@ -23,7 +23,6 @@ class FruitList extends StatelessWidget {
           size: size,
         );
       },
-      separatorBuilder: (context, index) => const Divider(),
     );
   }
 }
