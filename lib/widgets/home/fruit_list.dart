@@ -12,17 +12,20 @@ class FruitList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: fruitList.length,
-      itemBuilder: (context, index) {
-        final alt = index % 2 == 0 ? true : false;
-        final data = fruitList[index];
-        return ListTileFruit(
-          alt: alt,
-          data: data,
-          size: size,
-        );
-      },
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ListView.builder(
+        itemCount: fruitList.length,
+        itemBuilder: (context, index) {
+          final alt = index % 2 == 0 ? true : false;
+          final data = fruitList[index];
+          return ListTileFruit(
+            alt: alt,
+            data: data,
+            size: size,
+          );
+        },
+      ),
     );
   }
 }
