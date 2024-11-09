@@ -10,6 +10,7 @@ class Homescreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: secondaryColor,
         appBar: AppBar(
           title: const Text("My App"),
           backgroundColor: primaryColor,

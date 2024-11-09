@@ -15,6 +15,7 @@ class Loginscreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: secondaryColor,
       appBar: AppBar(
         titleTextStyle: const TextStyle(
           color: primaryColor,
