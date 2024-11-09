@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loginapp/constants/colorconst.dart';
 import 'package:loginapp/data/fruitslist.dart';
 import 'package:loginapp/widgets/home/list_tile_fruit.dart';
 
@@ -19,10 +20,17 @@ class FruitList extends StatelessWidget {
         itemBuilder: (context, index) {
           final alt = index % 2 == 0 ? true : false;
           final data = fruitList[index];
-          return ListTileFruit(
-            alt: alt,
-            data: data,
-            size: size,
+          return Dismissible(
+            background: Container(
+              color: primaryColor,
+              child: const Icon(Icons.delete,color: secondaryColor,),
+            ),
+            key: ValueKey(index),
+            child: ListTileFruit(
+              alt: alt,
+              data: data,
+              size: size,
+            ),
           );
         },
       ),
