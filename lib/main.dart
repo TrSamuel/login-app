@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loginapp/screens/homescreen.dart';
 import 'package:loginapp/screens/loginscreen.dart';
-void main(List<String> args) {
+void main() {
   runApp(const LoginApp());
 }
 

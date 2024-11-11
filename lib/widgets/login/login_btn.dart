@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loginapp/constants/colorconst.dart';
 import 'package:loginapp/function/login.dart';
+import 'package:loginapp/screens/homescreen.dart';
 import 'package:loginapp/widgets/common/show_snack_bar.dart';
 
 class LoginBtn extends StatelessWidget {
@@ -36,7 +37,11 @@ class LoginBtn extends StatelessWidget {
               text: 'Login success',
               bgColor: const Color.fromARGB(255, 19, 90, 149),
             );
-            Navigator.pushReplacementNamed(context, "home-screen");
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Homescreen(),
+                ));
           } else {
             showSnackBar(
               context: context,
